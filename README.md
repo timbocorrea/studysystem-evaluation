@@ -2,7 +2,7 @@
 
 ## Snapshot público para avaliação acadêmica
 
-Este repositório é um snapshot público sanitizado do StudySystem, preparado para a avaliação acadêmica. Ele não contém secrets, credenciais privadas ou o histórico Git do repositório canônico. O arquivo `.env.example` usa somente placeholders; configure os valores do seu ambiente em `.env.local`, que não deve ser versionado.
+Este repositório é um snapshot público sanitizado do StudySystem, preparado para a avaliação acadêmica. Ele não contém secrets, credenciais privadas ou o histórico Git do repositório canônico. O arquivo `.env.example` usa somente placeholders; configure os valores do seu ambiente em `.env.local`, que não deve ser versionado. Não publique credenciais, tokens ou outros dados privados.
 
 ## Projeto Integrador — 2ª Entrega
 
@@ -69,7 +69,7 @@ Para localizar rapidamente o que será demonstrado pelo avaliador:
 7. Confirmar que a tentativa/progresso foram persistidos.
 8. Retornar ao curso/aula e observar a recuperação do progresso.
 
-A validação consolidada da PoC inclui desktop e viewport mobile aproximado de 390 x 844. O estado técnico atual documentado para a entrega é de 27 suítes / 137 testes unitários aprovados, typecheck, build e security scan aprovados, além de alinhamento operacional de 39 migrations ativas com 39 remotas.
+A validação consolidada da PoC inclui desktop e viewport mobile aproximado de 390 x 844. O estado técnico atual documentado para a entrega é de 32 suítes / 167 testes unitários aprovados, typecheck, build e security scan aprovados, além de alinhamento operacional de 42 migrations ativas com 42 remotas. A Fase B foi concluída com ensaio pré-vídeo aprovado, com duração aproximada de 54 segundos e dentro do limite de 60 segundos.
 
 ### Evidências visuais
 
@@ -85,9 +85,16 @@ Nenhuma URL de vídeo é declarada antes da produção e validação do material
 
 ### GitHub para avaliação
 
-`GITHUB_EVALUATION_ACCESS=PUBLIC_EVALUATION_MIRROR`
+```text
+GITHUB_EVALUATION_ACCESS=PASS
+PUBLIC_EVALUATION_REPOSITORY=https://github.com/timbocorrea/studysystem-evaluation
+PUBLIC_REPOSITORY_VISIBILITY=PUBLIC
+EVALUATION_REPOSITORY=PUBLIC_SANITIZED_SNAPSHOT
+CANONICAL_REPOSITORY=PRIVATE
+CANONICAL_REPOSITORY_VISIBILITY=PRIVATE
+```
 
-Este repositório é o espelho público sanitizado destinado à avaliação acadêmica. O repositório canônico e seu histórico permanecem privados e não fazem parte deste snapshot.
+Este repositório é o snapshot público sanitizado destinado à avaliação acadêmica da 2ª entrega. Código e documentação estão disponíveis para avaliação; o repositório canônico e seu histórico permanecem privados e não fazem parte deste snapshot.
 
 ---
 
@@ -340,7 +347,7 @@ As Edge Functions e seus secrets são configurados no projeto Supabase, independ
     npm run security:scan
     npm run test:e2e
 
-A validação técnica consolidada antes desta sincronização documental registrou 27 suítes / 137 testes unitários aprovados, typecheck, build e security scan aprovados. Os checks da PR da Fase A revalidam os comandos configurados no pipeline remoto; resultados transitórios devem ser consultados na própria PR.
+A validação técnica consolidada após as Fases B e C registrou 32 suítes / 167 testes unitários aprovados, typecheck, build e security scan aprovados. O snapshot público foi sanitizado para avaliação e não inclui o histórico Git privado. Resultados transitórios de checks remotos devem ser consultados na execução correspondente.
 
 Caso o Chromium não esteja instalado:
 

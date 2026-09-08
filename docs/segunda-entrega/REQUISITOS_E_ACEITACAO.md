@@ -79,7 +79,7 @@ A matriz abaixo explicita a sequência acadêmica **problema → persona → jor
 | RNF-04 — estados compreensíveis | Loading, erro, bloqueio e resultado estão implementados conforme `docs/FSD.md` e `docs/DESIGN.md`. | IMPLEMENTED / evidência proporcional à PoC |
 | RNF-05 — desempenho razoável | A jornada foi demonstrada funcionalmente sem definição acadêmica de SLA numérico. | PASS no critério definido |
 | RNF-06 — credenciais privadas | `npm run security:scan` aprovado na validação técnica consolidada; README reforça a fronteira de secrets. | PASS |
-| RNF-07 — documentação | `POC.md`, este documento, `ARQUITETURA_E_TECNOLOGIAS.md`, `STATUS_ENTREGA.md` e `README.md`. | PASS após Fase A |
+| RNF-07 — documentação | `POC.md`, este documento, `ARQUITETURA_E_TECNOLOGIAS.md`, `STATUS_ENTREGA.md` e `README.md`. | PASS após Fases A, B e C |
 
 ## 7. Evidências de implementação
 

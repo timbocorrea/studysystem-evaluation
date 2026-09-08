@@ -92,21 +92,21 @@ O repositório mantém documentado um fallback legado de progresso cuja equival�
 
 ## 6. Migrations e alinhamento operacional
 
-Após a reconciliação controlada do histórico de migrations, o diretório ativo e o ledger remoto ficaram alinhados:
+Após a reconciliação controlada do histórico de migrations, o diretório ativo e o ledger remoto permanecem alinhados:
 
 ```text
-ACTIVE_MIGRATIONS=39
-REMOTE_MIGRATIONS=39
+ACTIVE_MIGRATIONS=42
+REMOTE_MIGRATIONS=42
 ACTIVE_LOCAL_ONLY=0
 REMOTE_ONLY=0
 ACTIVE_DUPLICATES=0
-MIGRATION_ALIGNMENT=39/39
+MIGRATION_ALIGNMENT=42/42
 LEVEL_1_OPERATIONAL_ALIGNMENT_COMPLETE=SIM
 ```
 
 Durante essa reconciliação, **27 migrations históricas** foram preservadas em `archive/supabase-migrations/`. O conteúdo SQL histórico foi mantido; a mudança organizou a proveniência para separar arquivos históricos do conjunto ativo, sem aplicar essas 27 migrations novamente no banco remoto.
 
-A validação operacional final do ciclo de reconciliação foi concluída antes desta sincronização acadêmica. A Fase A não executa `db push`, `migration repair`, DDL, DML ou qualquer escrita remota de banco.
+A validação operacional final do ciclo de reconciliação foi concluída antes desta sincronização acadêmica. Este ciclo documental não executa `db push`, `migration repair`, DDL, DML ou qualquer escrita remota de banco.
 
 Exemplos de migrations relevantes para a jornada:
 
@@ -128,15 +128,15 @@ Exemplos de migrations relevantes para a jornada:
 
 ```text
 FUNCTIONAL_POC=PASS
-UNIT_TESTS=137/137 PASS
-UNIT_TEST_SUITES=27/27 PASS
+UNIT_TESTS=167/167 PASS
+UNIT_TEST_SUITES=32/32 PASS
 TYPECHECK=PASS
 BUILD=PASS
 SECURITY_SCAN=PASS
-MIGRATION_ALIGNMENT=39/39
-REMOTE_DATABASE_WRITE_EXECUTED_IN_PHASE_A=NAO
+MIGRATION_ALIGNMENT=42/42
+REMOTE_DATABASE_WRITE_EXECUTED_IN_DOCUMENTATION_SYNC=NAO
 ```
 
 A PoC funcional foi validada com aluno autenticado em desktop e viewport mobile aproximado de 390 x 844. A integração frontend/backend/banco, a persistência da tentativa, o progresso e a recuperação posterior foram demonstrados.
 
-Essas evidências não equivalem a uma declaração de que toda a superfície do banco, todas as funcionalidades secundárias ou todos os dispositivos possíveis estejam integralmente homologados. A publicação pública do repositório pertence a uma trilha de segurança separada.
+Essas evidências não equivalem a uma declaração de que toda a superfície do banco, todas as funcionalidades secundárias ou todos os dispositivos possíveis estejam integralmente homologados. O snapshot público sanitizado está disponível para avaliação; o repositório canônico e seu histórico permanecem privados.

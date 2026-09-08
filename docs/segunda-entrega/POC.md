@@ -167,11 +167,11 @@ LESSON_PROGRESS_READ_AFTER_WRITE=PASS
 PROGRESS_RECOVERY=PASS
 DESKTOP_POC=PASS
 MOBILE_POC=PASS
-UNIT_TESTS=137/137 PASS
+UNIT_TESTS=167/167 PASS
 TYPECHECK=PASS
 BUILD=PASS
 SECURITY_SCAN=PASS
-MIGRATION_ALIGNMENT=39/39
+MIGRATION_ALIGNMENT=42/42
 ```
 
 Esses estados se limitam às evidências da jornada da PoC e às validações técnicas consolidadas. Eles não representam homologação de todas as funcionalidades do produto nem uma afirmação absoluta sobre toda a superfície de segurança da aplicação.
