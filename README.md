@@ -12,9 +12,9 @@ O produto foi pensado para apoiar instituições de ensino regular, escolas e cu
 
 O acesso é organizado por autenticação, perfil e regras de autorização do backend:
 
-- `STUDENT`: acessa cursos, aulas, materiais, questionários, resultados, progresso e recursos pessoais disponíveis para sua conta.
-- `INSTRUCTOR`: trabalha com conteúdo e interações autorizadas dentro dos cursos e aulas.
-- `MASTER`: possui funções administrativas ampliadas para usuários, acessos, auditoria e configurações.
+- Estudante (`STUDENT`): acessa cursos, aulas, materiais, questionários, resultados, progresso e recursos pessoais disponíveis para sua conta.
+- Instrutor (`INSTRUCTOR`): trabalha com conteúdo e interações autorizadas dentro dos cursos e aulas.
+- Administrador (`MASTER`): possui as funções administrativas ampliadas previstas no modelo atual para usuários, acessos, auditoria e configurações.
 
 A aplicação não oferece atalhos públicos para promoção de perfil. As permissões administrativas dependem do provisionamento adequado do ambiente.
 
@@ -35,7 +35,7 @@ O código atual reúne recursos para organizar o estudo e acompanhar seu desenvo
 - integração opcional com Dropbox para localizar e utilizar materiais;
 - interface responsiva, navegação móvel e suporte técnico à instalação como PWA.
 
-Esses recursos não têm todos o mesmo grau de validação operacional. O fluxo principal de tentativa e progresso foi validado na PoC; recursos complementares, como Buddy AI, Dropbox, fórum, gamificação, notas e acompanhamento administrativo, dependem de configuração, permissões e validações próprias. O ranking global permanece fora do caminho principal enquanto seu modelo de autorização entre usuários não estiver comprovado.
+Esses recursos não têm todos o mesmo grau de validação operacional. O fluxo principal de tentativa e progresso foi validado no recorte acadêmico; recursos complementares, como Buddy AI, Dropbox, fórum, gamificação, notas e acompanhamento administrativo, dependem de configuração, permissões e validações próprias. O ranking global permanece fora do caminho principal enquanto seu modelo de autorização entre usuários não estiver comprovado.
 
 O projeto possui reprodução de áudio, mas este README não apresenta text-to-speech como uma funcionalidade pronta: não foi encontrada uma implementação de síntese de voz no código auditado.
 
@@ -43,7 +43,7 @@ O projeto possui reprodução de áudio, mas este README não apresenta text-to-
 
 A segunda entrega acadêmica utiliza apenas um recorte funcional do StudySystem. O produto tem uma visão mais ampla, mas a avaliação foi delimitada para que uma jornada completa pudesse ser observada com clareza, incluindo interface, autenticação, regras de negócio, backend, persistência e recuperação.
 
-Esta segunda entrega não pretende demonstrar toda a superfície funcional do StudySystem. A PoC foi deliberadamente limitada a uma jornada principal para que o funcionamento de ponta a ponta pudesse ser acompanhado sem confundir o recorte acadêmico com o produto inteiro.
+Esta segunda entrega não pretende demonstrar toda a superfície funcional do StudySystem. A Prova de Conceito (PoC) foi deliberadamente limitada a uma jornada principal para que o funcionamento de ponta a ponta pudesse ser acompanhado sem confundir o recorte acadêmico com o produto inteiro.
 
 **Integrante:** ALEXANDRE CORREA DOS SANTOS
 
