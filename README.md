@@ -96,7 +96,25 @@ O código-fonte e os passos para reprodução estão neste repositório público
 
 [https://github.com/timbocorrea/studysystem-evaluation](https://github.com/timbocorrea/studysystem-evaluation)
 
-A instância pública já está conectada a um backend provisionado. Use uma conta autorizada pelo ambiente e os cursos liberados para ela; este README não publica credenciais, senhas ou dados pessoais.
+A instância pública já está conectada a um backend provisionado. Para a avaliação funcional, siga as instruções de acesso abaixo; este README não publica dados de autenticação ou dados pessoais.
+
+### Acesso para avaliação
+
+Para a avaliação funcional, utilize a versão publicada acima. Não é necessário instalar Supabase ou backend para realizar essa avaliação. Quando for necessário autenticar, os dados de acesso da conta destinada à demonstração são fornecidos separadamente junto à submissão no Portal do Aluno. Por segurança, nenhuma credencial é publicada neste repositório.
+
+Após o login, o fluxo principal utilizado na demonstração é:
+
+`Dashboard → Curso → Aula → Questionário → Resultado → retorno ao curso`
+
+### Avaliação rápida
+
+1. Abra a aplicação publicada.
+2. Entre com a credencial de avaliação fornecida na submissão.
+3. Abra um curso e uma aula.
+4. Acesse o questionário e visualize o fluxo de resultado.
+5. Retorne ao curso para observar a continuidade da jornada.
+
+Para apenas conhecer e avaliar o funcionamento do StudySystem, não é necessário realizar a instalação local descrita abaixo.
 
 ## Instalação e configuração
 
