@@ -1,0 +1,61 @@
+# Logs
+logs/*
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Audit reports intentionally versioned only when sanitized
+!logs/audits/
+logs/audits/*
+!logs/audits/access-control-profile-checklist/
+logs/audits/access-control-profile-checklist/*
+!logs/audits/access-control-profile-checklist/relatorio-final.md
+!logs/audits/resource-url-resolver-readiness/
+logs/audits/resource-url-resolver-readiness/*
+!logs/audits/resource-url-resolver-readiness/relatorio-ciclo-8b.md
+!logs/audits/lesson-resources-storage-schema-readiness/
+logs/audits/lesson-resources-storage-schema-readiness/*
+!logs/audits/lesson-resources-storage-schema-readiness/relatorio-ciclo-9b.md
+
+node_modules
+dist
+dist-ssr
+playwright-report
+test-results
+supabase/.temp
+__pycache__
+*.pyc
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+.vercel
+
+# Additional publication-safety guards
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*
+secrets*
+*.sql.dump
+*.dump
+*.bak
+*.backup

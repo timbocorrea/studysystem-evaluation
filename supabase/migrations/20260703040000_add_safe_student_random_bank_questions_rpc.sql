@@ -1,0 +1,155 @@
+-- STUDYSYSTEM-2026
+-- FASE 14K-4 - RPC segura para leitura de questões aleatórias do banco por estudantes
+--
+-- Contexto:
+-- - get_random_bank_questions expõe question_bank_options.is_correct ao estudante.
+-- - Esta nova RPC filtra e força is_correct para false nas opções enviadas ao aluno.
+-- - Aplica regras de acesso seguras (staff, matrícula ativa, conteúdo público).
+--
+-- Controles:
+-- - SECURITY DEFINER com search_path seguro.
+-- - Revoga EXECUTE de anon/public e concede apenas a authenticated.
+
+create or replace function public.get_random_bank_questions_for_student(
+  p_count integer,
+  p_course_id uuid default null::uuid,
+  p_module_id uuid default null::uuid,
+  p_lesson_id uuid default null::uuid,
+  p_difficulty text default null::text,
+  p_exclude_ids uuid[] default null::uuid[]
+)
+returns setof json
+language plpgsql
+security definer
+set search_path = public, pg_temp
+as $$
+declare
+  v_user_id uuid;
+  v_course_id uuid;
+  v_is_allowed boolean := false;
+begin
+  v_user_id := auth.uid();
+
+  if v_user_id is null then
+    raise exception 'Not authenticated';
+  end if;
+
+  -- Determinar course_id
+  if p_course_id is not null then
+    v_course_id := p_course_id;
+  elsif p_lesson_id is not null then
+    select m.course_id
+      into v_course_id
+    from public.lessons l
+    join public.modules m
+      on m.id = l.module_id
+    where l.id = p_lesson_id
+    limit 1;
+  end if;
+
+  -- Validar permissão
+  select exists (
+    select 1
+    from public.profiles p
+    where p.id = v_user_id
+      and upper(coalesce(p.role::text, '')) in ('MASTER', 'ADMIN', 'INSTRUCTOR')
+  )
+  or (
+    v_course_id is not null
+    and (
+      exists (
+        select 1
+        from public.courses c
+        where c.id = v_course_id
+          and c.instructor_id = v_user_id
+      )
+      or exists (
+        select 1
+        from public.course_enrollments ce
+        where ce.course_id = v_course_id
+          and ce.user_id = v_user_id
+          and ce.is_active = true
+      )
+      or exists (
+        select 1
+        from public.courses c
+        where c.id = v_course_id
+          and coalesce(c.is_public, false) = true
+      )
+    )
+  )
+  or (
+    p_lesson_id is not null
+    and exists (
+      select 1
+      from public.lessons l
+      where l.id = p_lesson_id
+        and coalesce(l.is_public, false) = true
+        and coalesce(l.is_active, true) = true
+    )
+  )
+  into v_is_allowed;
+
+  if not coalesce(v_is_allowed, false) then
+    raise exception 'Access denied';
+  end if;
+
+  return query
+  with filtered_questions as (
+    select q.*
+    from public.question_bank q
+    where (p_course_id is null or q.course_id = p_course_id)
+      and (p_module_id is null or q.module_id = p_module_id)
+      and (p_lesson_id is null or q.lesson_id = p_lesson_id)
+      and (p_difficulty is null or q.difficulty = p_difficulty)
+      and coalesce(q.status, 'active') = 'active'
+      and (
+        p_exclude_ids is null
+        or array_length(p_exclude_ids, 1) is null
+        or q.id <> all (p_exclude_ids)
+      )
+    order by random()
+    limit greatest(0, least(coalesce(p_count, 0), 200))
+  )
+  select row_to_json(q_data)
+  from (
+    select
+      fq.id,
+      fq.question_text,
+      fq.image_url,
+      fq.image_alt,
+      fq.difficulty,
+      fq.points,
+      fq.course_id,
+      fq.module_id,
+      fq.lesson_id,
+      fq.created_at,
+      fq.status,
+      coalesce(
+        (
+          select json_agg(json_build_object(
+            'id', opt.id,
+            'question_id', opt.question_id,
+            'option_text', opt.option_text,
+            'position', opt.position,
+            'is_correct', false
+          ))
+          from (
+            select id, question_id, option_text, position
+            from public.question_bank_options
+            where question_id = fq.id
+            order by position
+          ) opt
+        ),
+        '[]'::json
+      ) as question_bank_options
+    from filtered_questions fq
+  ) q_data;
+end;
+$$;
+
+revoke all on function public.get_random_bank_questions_for_student(integer, uuid, uuid, uuid, text, uuid[]) from public;
+revoke all on function public.get_random_bank_questions_for_student(integer, uuid, uuid, uuid, text, uuid[]) from anon;
+grant execute on function public.get_random_bank_questions_for_student(integer, uuid, uuid, uuid, text, uuid[]) to authenticated;
+
+notify pgrst, 'reload schema';

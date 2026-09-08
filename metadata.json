@@ -1,0 +1,8 @@
+{
+  "name": "StudySystem",
+  "description": "A high-end academic study platform built with Clean Architecture, OOP principles, and React. Features a robust domain model, repository pattern, and AI-powered study assistance.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

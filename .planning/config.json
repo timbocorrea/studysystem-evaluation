@@ -1,0 +1,10 @@
+{
+  "project_name": "Sistema de Estudos",
+  "version": "1.0.0",
+  "intel": {
+    "enabled": true
+  },
+  "workflow": {
+    "mode": "standard"
+  }
+}

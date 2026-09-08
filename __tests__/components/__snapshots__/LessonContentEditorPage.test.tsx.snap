@@ -1,0 +1,1018 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`LessonContentEditorPage - Integration Tests > 5. UI Snapshot > should match UI snapshot 1`] = `
+<div>
+  <div
+    class="h-full bg-white dark:bg-slate-950 flex flex-col overflow-hidden"
+  >
+    <div
+      class="z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-sm"
+    >
+      <div
+        class="px-8 py-4"
+      >
+        <div
+          class="flex items-center justify-between"
+        >
+          <div
+            class="flex items-center gap-4"
+          >
+            <button
+              class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center transition-colors text-slate-600 dark:text-slate-300"
+              title="Voltar sem salvar"
+            >
+              <i
+                class="fas fa-arrow-left"
+              />
+            </button>
+            <div
+              class="hidden sm:block"
+            >
+              <h1
+                class="text-xl font-black text-slate-900 dark:text-white uppercase tracking-tight"
+              >
+                Test Lesson Title
+              </h1>
+              <p
+                class="text-[10px] text-indigo-500 font-black uppercase tracking-widest"
+              >
+                Editor de Conteúdo
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex items-center gap-6"
+          >
+            <div
+              class="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700 shadow-inner"
+            >
+              <button
+                class="h-8 px-3 rounded-lg flex items-center gap-2 transition-all duration-200 bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-300 shadow-sm font-bold"
+              >
+                <i
+                  class="fas fa-pencil-alt text-[10px]"
+                />
+                <span
+                  class="text-[10px] uppercase tracking-wider"
+                >
+                  Editor
+                </span>
+              </button>
+              <button
+                class="h-8 px-3 rounded-lg flex items-center gap-2 transition-all duration-200 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
+              >
+                <i
+                  class="fas fa-eye text-[10px]"
+                />
+                <span
+                  class="text-[10px] uppercase tracking-wider"
+                >
+                  Preview
+                </span>
+              </button>
+            </div>
+            <div
+              class="w-px h-6 bg-slate-200 dark:bg-slate-700 mx-2"
+            />
+            <button
+              class="h-9 px-3 rounded-lg font-semibold transition-all active:scale-95 flex items-center gap-1.5 text-[10px] uppercase bg-cyan-600 text-white border border-transparent hover:bg-cyan-700 dark:bg-transparent dark:border-cyan-500 dark:text-cyan-400 dark:hover:bg-cyan-500/20 dark:hover:border-cyan-400"
+              title="Gerenciar quiz desta aula"
+            >
+              <i
+                class="fas fa-clipboard-question text-[10px]"
+              />
+              QUIZ
+            </button>
+            <button
+              class="h-9 px-3 rounded-lg font-semibold transition-all active:scale-95 flex items-center gap-1.5 text-[10px] uppercase bg-teal-600 text-white border border-transparent hover:bg-teal-700 dark:bg-transparent dark:border-teal-500 dark:text-teal-400 dark:hover:bg-teal-500/20 dark:hover:border-teal-400"
+              title="Importar ou exportar conteúdo (DOCX, JSON, MD)"
+            >
+              <i
+                class="fas fa-file-import text-[10px]"
+              />
+              IMPORTAR/EXPORTAR
+            </button>
+            <div
+              class="w-px h-6 bg-slate-200 dark:bg-slate-700 mx-2"
+            />
+            <button
+              class="h-9 px-3 rounded-lg font-semibold transition-all active:scale-95 flex items-center gap-1.5 text-[10px] uppercase bg-indigo-600 text-white border border-transparent hover:bg-indigo-700 dark:bg-transparent dark:border-indigo-500 dark:text-indigo-400 dark:hover:bg-indigo-500/20 dark:hover:border-indigo-400 disabled:opacity-50"
+              title="Sincronizar conteúdo da aula no Banco Vetorial para busca semântica da IA"
+            >
+              <i
+                class="fas fa-brain text-[10px]"
+              />
+              SINC RAG
+            </button>
+            <button
+              class="h-9 px-3 rounded-lg font-semibold transition-all active:scale-95 flex items-center gap-1.5 text-[10px] uppercase bg-purple-600 text-white border border-transparent hover:bg-purple-700 dark:bg-transparent dark:border-purple-500 dark:text-purple-400 dark:hover:bg-purple-500/20 dark:hover:border-purple-400 disabled:opacity-50"
+              title="Gerar automaticamente um Quiz baseado no conteúdo desta aula usando IA"
+            >
+              <i
+                class="fas fa-wand-magic-sparkles text-[10px]"
+              />
+              GERAR QUIZ (IA)
+            </button>
+            <button
+              class="h-9 px-3 rounded-lg font-semibold transition-all active:scale-95 flex items-center gap-1.5 text-[10px] uppercase bg-slate-100 text-slate-600 border border-slate-200 hover:bg-slate-200 dark:bg-transparent dark:border-slate-400 dark:text-slate-300 dark:hover:bg-slate-400/20 dark:hover:border-slate-300"
+              title="Adicionar material complementar"
+            >
+              <i
+                class="fas fa-paperclip text-[10px]"
+              />
+              Material
+            </button>
+            <button
+              class="h-9 px-3 rounded-lg bg-blue-600 text-white border border-transparent hover:bg-blue-700 dark:bg-transparent dark:border-blue-500 dark:text-blue-400 dark:hover:bg-blue-500/20 dark:hover:border-blue-400 font-semibold transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1.5 text-[10px] uppercase"
+              title=""
+            >
+              <i
+                class="fas fa-save text-[10px]"
+              />
+              Salvar
+            </button>
+            <button
+              class="h-9 w-9 rounded-lg font-semibold transition-all active:scale-95 flex items-center justify-center ml-auto bg-slate-100 text-slate-500 border border-slate-200 hover:bg-slate-200 dark:bg-transparent dark:border-slate-400 dark:text-slate-300 dark:hover:bg-slate-400/20 dark:hover:border-slate-300"
+              title="Configurações da Aula"
+            >
+              <i
+                class="fas fa-cog text-[10px]"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex-1 flex flex-col overflow-hidden bg-slate-100 dark:bg-black/20 relative"
+    >
+      <div
+        class="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-6 p-6 overflow-hidden"
+      >
+        <div
+          class="flex flex-col h-full min-h-0"
+        >
+          <div
+            class="mb-4 px-2 flex-shrink-0"
+          >
+            <div
+              class="flex items-center justify-between"
+            >
+              <div>
+                <h2
+                  class="text-xl font-black tracking-tight flex items-center gap-2 text-slate-900 dark:text-white"
+                >
+                  <i
+                    class="fas fa-eye text-indigo-500"
+                  />
+                  Prévia para Alunos
+                </h2>
+                <p
+                  class="text-xs text-slate-500 dark:text-slate-400 font-medium"
+                >
+                  Como os alunos verão o conteúdo
+                </p>
+              </div>
+              <button
+                class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                title="Mudar para tema escuro"
+              >
+                <i
+                  class="fas fa-moon text-sm text-indigo-600"
+                />
+                <span
+                  class="text-xs font-medium text-slate-700 dark:text-slate-300"
+                >
+                  Claro
+                </span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex-1 overflow-y-auto p-8 rounded-2xl border shadow-sm scrollbar-thin bg-white border-slate-200"
+          >
+            <style>
+              .editor-content { overflow: hidden; }
+            </style>
+            <div
+              class="relative flex flex-col w-full p-2 md:p-4 rounded-2xl border transition-all cursor-pointer duration-300 mb-0 bg-white border-transparent text-slate-700 hover:bg-indigo-50/30 hover:ring-2 hover:ring-indigo-500/50"
+              data-block-id="block-1"
+              title="Clique para localizar este bloco no gerenciador"
+            >
+              <div
+                class="absolute inset-0 z-10 cursor-pointer block-overlay"
+              />
+              <div
+                class="editor-content w-full text-sm"
+                style="line-height: 1.6;"
+              >
+                <p>
+                  First block content
+                </p>
+              </div>
+            </div>
+            <div
+              class="relative flex flex-col w-full p-2 md:p-4 rounded-2xl border transition-all cursor-pointer duration-300 mb-8 bg-white border-transparent text-slate-700 hover:bg-indigo-50/30 hover:ring-2 hover:ring-indigo-500/50"
+              data-block-id="block-2"
+              title="Clique para localizar este bloco no gerenciador"
+            >
+              <div
+                class="absolute inset-0 z-10 cursor-pointer block-overlay"
+              />
+              <div
+                class="editor-content w-full text-sm"
+                style="line-height: 1.6;"
+              >
+                <p>
+                  Second block content
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col h-full min-h-0"
+        >
+          <div
+            class="mb-4 px-2 flex-shrink-0"
+          >
+            <div>
+              <h2
+                class="text-2xl font-black tracking-tight text-slate-900 dark:text-white"
+              >
+                Gerenciador de Blocos
+              </h2>
+              <p
+                class="text-xs text-slate-500 dark:text-slate-400 font-medium"
+              >
+                Sincronize parágrafos e áudios com precisão.
+              </p>
+            </div>
+          </div>
+          <div
+            class="mb-4 px-2 flex flex-wrap items-center justify-start gap-3 gap-y-4"
+          >
+            <div
+              class="flex items-center gap-2"
+            >
+              <button
+                class="h-9 px-3 rounded-lg font-semibold transition-all active:scale-95 flex items-center gap-1.5 text-[10px] uppercase shadow-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:border-indigo-400 shadow-sm"
+                title="Ativar modo de seleção"
+              >
+                <i
+                  class="far fa-square text-[10px]"
+                />
+                Selecionar
+              </button>
+              <div
+                class="relative"
+              >
+                <select
+                  class="h-9 px-3 pr-8 rounded-lg font-semibold transition-all active:scale-95 text-[10px] uppercase shadow-sm bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:border-indigo-400 cursor-pointer appearance-none"
+                  title="Filtrar blocos por áudio"
+                >
+                  <option
+                    value="all"
+                  >
+                    📋 Todos os Blocos
+                  </option>
+                  <option
+                    value="with-audio"
+                  >
+                    🔊 Com Áudio
+                  </option>
+                  <option
+                    value="without-audio"
+                  >
+                    🔇 Sem Áudio
+                  </option>
+                </select>
+                <i
+                  class="fas fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-[8px] text-slate-400 pointer-events-none"
+                />
+              </div>
+              <div
+                class="flex items-center gap-2"
+              >
+                <div
+                  class="relative"
+                >
+                  <select
+                    class="h-9 px-3 pr-8 rounded-lg font-semibold transition-all active:scale-95 text-[10px] uppercase shadow-sm bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:border-indigo-400 cursor-pointer appearance-none"
+                    title="Quantidade de blocos por página"
+                  >
+                    <option
+                      value="10"
+                    >
+                      📄 10 por página
+                    </option>
+                    <option
+                      value="20"
+                    >
+                      📄 20 por página
+                    </option>
+                    <option
+                      value="50"
+                    >
+                      📄 50 por página
+                    </option>
+                    <option
+                      value="custom"
+                    >
+                      ✏️ Personalizado
+                    </option>
+                    <option
+                      value="all"
+                    >
+                      📚 Todos
+                    </option>
+                  </select>
+                  <i
+                    class="fas fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-[8px] text-slate-400 pointer-events-none"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex-1 overflow-y-auto pr-4 space-y-6 pb-20 scrollbar-thin"
+            id="blocks-scroll-container"
+          >
+            <div
+              class="w-full"
+              style="content-visibility: auto; contain-intrinsic-size: 100px;"
+            >
+              <div
+                class="relative h-8 group/add flex items-center justify-center"
+              >
+                <div
+                  class="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-700 to-transparent opacity-0 group-hover/add:opacity-100 transition-opacity"
+                />
+                <div
+                  class="relative z-10 flex items-center gap-2 transition-all duration-200 opacity-0 scale-75 pointer-events-none"
+                >
+                  <button
+                    class="w-8 h-8 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 text-slate-400 dark:text-slate-500 hover:border-orange-500 hover:text-orange-600 hover:scale-110 shadow-lg transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
+                    disabled=""
+                    title="Diminuir espaçamento"
+                  >
+                    <i
+                      class="fas fa-minus text-xs"
+                    />
+                  </button>
+                  <div
+                    class="px-2 py-1 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg shadow-lg"
+                  >
+                    <span
+                      class="text-[9px] font-bold text-slate-500 dark:text-slate-400"
+                    >
+                      0
+                      px
+                    </span>
+                  </div>
+                  <button
+                    class="w-8 h-8 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 text-slate-400 dark:text-slate-500 hover:border-green-500 hover:text-green-600 hover:scale-110 shadow-lg transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
+                    title="Aumentar espaçamento"
+                  >
+                    <i
+                      class="fas fa-plus text-xs"
+                    />
+                  </button>
+                  <div
+                    class="w-px h-6 bg-slate-300 dark:bg-slate-600"
+                  />
+                  <button
+                    class="w-8 h-8 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 text-slate-400 dark:text-slate-500 hover:border-indigo-500 hover:text-indigo-600 hover:scale-110 shadow-lg transition-all duration-200"
+                    title="Inserir mídia"
+                  >
+                    <i
+                      class="fas fa-image text-xs"
+                    />
+                  </button>
+                  <button
+                    class="w-8 h-8 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 text-slate-400 dark:text-slate-500 hover:border-blue-500 hover:text-blue-600 hover:scale-110 shadow-lg transition-all duration-200"
+                    title="Adicionar bloco aqui"
+                  >
+                    <i
+                      class="fas fa-file-alt text-xs"
+                    />
+                  </button>
+                  <button
+                    class="w-8 h-8 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 text-slate-400 dark:text-slate-500 hover:border-amber-500 hover:text-amber-600 hover:scale-110 shadow-lg transition-all duration-200"
+                    title="Inserir Caixa de Resposta"
+                  >
+                    <i
+                      class="fas fa-pen-to-square text-xs"
+                    />
+                  </button>
+                </div>
+              </div>
+              <div
+                class="group relative bg-white dark:bg-slate-900/50 rounded-2xl border transition-all duration-300 border-slate-100 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700"
+                data-block-id="block-1"
+                data-instance="editor"
+              >
+                <div
+                  class="p-6 "
+                >
+                  <div
+                    class="flex items-start justify-between gap-4 mb-4"
+                  >
+                    <div
+                      class="flex items-center gap-3"
+                    >
+                      <div
+                        class="flex flex-col items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                      >
+                        <button
+                          class="p-1 text-slate-400 hover:text-indigo-500 disabled:opacity-30"
+                          disabled=""
+                        >
+                          <i
+                            class="fas fa-chevron-up text-xs"
+                          />
+                        </button>
+                        <button
+                          class="p-1 text-slate-400 hover:text-indigo-500 disabled:opacity-30"
+                        >
+                          <i
+                            class="fas fa-chevron-down text-xs"
+                          />
+                        </button>
+                      </div>
+                      <div
+                        class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-black text-slate-400"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="flex items-center gap-1.5"
+                      >
+                        <span
+                          class="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"
+                        >
+                          Sem Áudio
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      <div
+                        class="relative group/star"
+                      >
+                        <button
+                          class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500"
+                          title="Destacar bloco"
+                        >
+                          <i
+                            class="fas fa-star text-sm "
+                          />
+                        </button>
+                        <div
+                          class="absolute top-full left-1/2 -translate-x-1/2 mt-2 p-2 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-800 z-50 opacity-0 scale-95 pointer-events-none group-hover/star:opacity-100 group-hover/star:scale-100 group-hover/star:pointer-events-auto transition-all duration-200 w-max flex flex-col items-center gap-2"
+                        >
+                          <div
+                            class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white dark:bg-slate-900 border-l border-t border-slate-200 dark:border-slate-800 rotate-45"
+                          />
+                          <span
+                            class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider relative z-10"
+                          >
+                            Cor do Destaque
+                          </span>
+                          <div
+                            class="flex items-center gap-1 relative z-10"
+                          >
+                            <div
+                              class="relative w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 via-cyan-500 to-pink-500 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform shadow-sm"
+                            >
+                              <i
+                                class="fas fa-palette text-white text-[10px]"
+                              />
+                              <input
+                                class="absolute inset-0 opacity-0 cursor-pointer w-full h-full rounded-full"
+                                title="Escolher cor personalizada"
+                                type="color"
+                                value="#eab308"
+                              />
+                            </div>
+                            <button
+                              class="w-6 h-6 rounded-full hover:scale-110 transition-transform border border-slate-200 dark:border-slate-700 shadow-sm"
+                              style="background-color: #eab308;"
+                              title="Amarelo"
+                            />
+                            <button
+                              class="w-6 h-6 rounded-full hover:scale-110 transition-transform border border-slate-200 dark:border-slate-700 shadow-sm"
+                              style="background-color: #ef4444;"
+                              title="Vermelho"
+                            />
+                            <button
+                              class="w-6 h-6 rounded-full hover:scale-110 transition-transform border border-slate-200 dark:border-slate-700 shadow-sm"
+                              style="background-color: #3b82f6;"
+                              title="Azul"
+                            />
+                            <button
+                              class="w-6 h-6 rounded-full hover:scale-110 transition-transform border border-slate-200 dark:border-slate-700 shadow-sm"
+                              style="background-color: #22c55e;"
+                              title="Verde"
+                            />
+                            <button
+                              class="w-6 h-6 rounded-full hover:scale-110 transition-transform border border-slate-200 dark:border-slate-700 shadow-sm"
+                              style="background-color: #0ea5e9;"
+                              title="Roxo"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <button
+                        class="w-8 h-8 rounded-lg hover:bg-indigo-100 dark:hover:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center transition-colors"
+                        title="Gerenciar Áudio"
+                      >
+                        <i
+                          class="fas fa-music text-sm"
+                        />
+                      </button>
+                      <button
+                        class="w-8 h-8 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 flex items-center justify-center transition-colors"
+                        title="Copiar bloco"
+                      >
+                        <i
+                          class="fas fa-copy text-sm"
+                        />
+                      </button>
+                      <button
+                        class="w-8 h-8 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 flex items-center justify-center transition-colors"
+                        title="Recortar bloco"
+                      >
+                        <i
+                          class="fas fa-cut text-sm"
+                        />
+                      </button>
+                      <button
+                        class="w-8 h-8 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/30 text-red-500 flex items-center justify-center transition-colors"
+                        title="Excluir bloco"
+                      >
+                        <i
+                          class="fas fa-trash-alt text-sm"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="relative pt-2 transition-all duration-300 "
+                    style="display: flow-root;"
+                  >
+                    <div
+                      class="editor-content w-full bg-transparent border-none focus:ring-0 focus:outline-none p-0 text-slate-700 dark:text-slate-200 placeholder:text-slate-400 min-h-[60px] leading-relaxed text-sm font-medium"
+                      contenteditable="true"
+                      data-block-id="block-1"
+                      data-placeholder="Digite o conteúdo deste parágrafo..."
+                      style="min-height: 60px;"
+                    >
+                      <p>
+                        First block content
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="w-full"
+              style="content-visibility: auto; contain-intrinsic-size: 100px;"
+            >
+              <div
+                class="relative h-8 group/add flex items-center justify-center"
+              >
+                <div
+                  class="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-700 to-transparent opacity-0 group-hover/add:opacity-100 transition-opacity"
+                />
+                <div
+                  class="relative z-10 flex items-center gap-2 transition-all duration-200 opacity-0 scale-75 pointer-events-none"
+                >
+                  <button
+                    class="w-8 h-8 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 text-slate-400 dark:text-slate-500 hover:border-orange-500 hover:text-orange-600 hover:scale-110 shadow-lg transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
+                    title="Diminuir espaçamento"
+                  >
+                    <i
+                      class="fas fa-minus text-xs"
+                    />
+                  </button>
+                  <div
+                    class="px-2 py-1 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg shadow-lg"
+                  >
+                    <span
+                      class="text-[9px] font-bold text-slate-500 dark:text-slate-400"
+                    >
+                      1
+                      px
+                    </span>
+                  </div>
+                  <button
+                    class="w-8 h-8 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 text-slate-400 dark:text-slate-500 hover:border-green-500 hover:text-green-600 hover:scale-110 shadow-lg transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
+                    title="Aumentar espaçamento"
+                  >
+                    <i
+                      class="fas fa-plus text-xs"
+                    />
+                  </button>
+                  <div
+                    class="w-px h-6 bg-slate-300 dark:bg-slate-600"
+                  />
+                  <button
+                    class="w-8 h-8 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 text-slate-400 dark:text-slate-500 hover:border-indigo-500 hover:text-indigo-600 hover:scale-110 shadow-lg transition-all duration-200"
+                    title="Inserir mídia"
+                  >
+                    <i
+                      class="fas fa-image text-xs"
+                    />
+                  </button>
+                  <button
+                    class="w-8 h-8 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 text-slate-400 dark:text-slate-500 hover:border-blue-500 hover:text-blue-600 hover:scale-110 shadow-lg transition-all duration-200"
+                    title="Adicionar bloco aqui"
+                  >
+                    <i
+                      class="fas fa-file-alt text-xs"
+                    />
+                  </button>
+                  <button
+                    class="w-8 h-8 rounded-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 text-slate-400 dark:text-slate-500 hover:border-amber-500 hover:text-amber-600 hover:scale-110 shadow-lg transition-all duration-200"
+                    title="Inserir Caixa de Resposta"
+                  >
+                    <i
+                      class="fas fa-pen-to-square text-xs"
+                    />
+                  </button>
+                </div>
+              </div>
+              <div
+                class="group relative bg-white dark:bg-slate-900/50 rounded-2xl border transition-all duration-300 border-slate-100 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700"
+                data-block-id="block-2"
+                data-instance="editor"
+              >
+                <div
+                  class="p-6 "
+                >
+                  <div
+                    class="flex items-start justify-between gap-4 mb-4"
+                  >
+                    <div
+                      class="flex items-center gap-3"
+                    >
+                      <div
+                        class="flex flex-col items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                      >
+                        <button
+                          class="p-1 text-slate-400 hover:text-indigo-500 disabled:opacity-30"
+                        >
+                          <i
+                            class="fas fa-chevron-up text-xs"
+                          />
+                        </button>
+                        <button
+                          class="p-1 text-slate-400 hover:text-indigo-500 disabled:opacity-30"
+                          disabled=""
+                        >
+                          <i
+                            class="fas fa-chevron-down text-xs"
+                          />
+                        </button>
+                      </div>
+                      <div
+                        class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-black text-slate-400"
+                      >
+                        2
+                      </div>
+                      <div
+                        class="flex items-center gap-1.5"
+                      >
+                        <span
+                          class="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"
+                        >
+                          Sem Áudio
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      <div
+                        class="relative group/star"
+                      >
+                        <button
+                          class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500"
+                          title="Destacar bloco"
+                        >
+                          <i
+                            class="fas fa-star text-sm "
+                          />
+                        </button>
+                        <div
+                          class="absolute top-full left-1/2 -translate-x-1/2 mt-2 p-2 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-800 z-50 opacity-0 scale-95 pointer-events-none group-hover/star:opacity-100 group-hover/star:scale-100 group-hover/star:pointer-events-auto transition-all duration-200 w-max flex flex-col items-center gap-2"
+                        >
+                          <div
+                            class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white dark:bg-slate-900 border-l border-t border-slate-200 dark:border-slate-800 rotate-45"
+                          />
+                          <span
+                            class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider relative z-10"
+                          >
+                            Cor do Destaque
+                          </span>
+                          <div
+                            class="flex items-center gap-1 relative z-10"
+                          >
+                            <div
+                              class="relative w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 via-cyan-500 to-pink-500 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform shadow-sm"
+                            >
+                              <i
+                                class="fas fa-palette text-white text-[10px]"
+                              />
+                              <input
+                                class="absolute inset-0 opacity-0 cursor-pointer w-full h-full rounded-full"
+                                title="Escolher cor personalizada"
+                                type="color"
+                                value="#eab308"
+                              />
+                            </div>
+                            <button
+                              class="w-6 h-6 rounded-full hover:scale-110 transition-transform border border-slate-200 dark:border-slate-700 shadow-sm"
+                              style="background-color: #eab308;"
+                              title="Amarelo"
+                            />
+                            <button
+                              class="w-6 h-6 rounded-full hover:scale-110 transition-transform border border-slate-200 dark:border-slate-700 shadow-sm"
+                              style="background-color: #ef4444;"
+                              title="Vermelho"
+                            />
+                            <button
+                              class="w-6 h-6 rounded-full hover:scale-110 transition-transform border border-slate-200 dark:border-slate-700 shadow-sm"
+                              style="background-color: #3b82f6;"
+                              title="Azul"
+                            />
+                            <button
+                              class="w-6 h-6 rounded-full hover:scale-110 transition-transform border border-slate-200 dark:border-slate-700 shadow-sm"
+                              style="background-color: #22c55e;"
+                              title="Verde"
+                            />
+                            <button
+                              class="w-6 h-6 rounded-full hover:scale-110 transition-transform border border-slate-200 dark:border-slate-700 shadow-sm"
+                              style="background-color: #0ea5e9;"
+                              title="Roxo"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <button
+                        class="w-8 h-8 rounded-lg hover:bg-indigo-100 dark:hover:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center transition-colors"
+                        title="Gerenciar Áudio"
+                      >
+                        <i
+                          class="fas fa-music text-sm"
+                        />
+                      </button>
+                      <button
+                        class="w-8 h-8 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 flex items-center justify-center transition-colors"
+                        title="Copiar bloco"
+                      >
+                        <i
+                          class="fas fa-copy text-sm"
+                        />
+                      </button>
+                      <button
+                        class="w-8 h-8 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 flex items-center justify-center transition-colors"
+                        title="Recortar bloco"
+                      >
+                        <i
+                          class="fas fa-cut text-sm"
+                        />
+                      </button>
+                      <button
+                        class="w-8 h-8 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/30 text-red-500 flex items-center justify-center transition-colors"
+                        title="Excluir bloco"
+                      >
+                        <i
+                          class="fas fa-trash-alt text-sm"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="relative pt-2 transition-all duration-300 "
+                    style="display: flow-root;"
+                  >
+                    <div
+                      class="editor-content w-full bg-transparent border-none focus:ring-0 focus:outline-none p-0 text-slate-700 dark:text-slate-200 placeholder:text-slate-400 min-h-[60px] leading-relaxed text-sm font-medium"
+                      contenteditable="true"
+                      data-block-id="block-2"
+                      data-placeholder="Digite o conteúdo deste parágrafo..."
+                      style="min-height: 60px;"
+                    >
+                      <p>
+                        Second block content
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="fixed inset-y-0 right-0 w-80 bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 shadow-2xl transform transition-transform duration-300 z-[60] translate-x-full"
+    >
+      <div
+        class="h-full flex flex-col"
+      >
+        <div
+          class="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur"
+        >
+          <h2
+            class="font-bold text-slate-800 dark:text-white"
+          >
+            Configurações da Aula
+          </h2>
+          <button
+            class="w-8 h-8 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 flex items-center justify-center transition-colors text-slate-500"
+          >
+            <i
+              class="fas fa-times"
+            />
+          </button>
+        </div>
+        <div
+          class="flex-1 overflow-y-auto p-4 space-y-6"
+        >
+          <div
+            class="space-y-2"
+          >
+            <label
+              class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+            >
+              Título da Aula
+            </label>
+            <input
+              class="w-full px-3 py-2 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg text-sm text-slate-700 dark:text-slate-200 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+              placeholder="Ex: Introdução ao React"
+              type="text"
+              value="Test Lesson Title"
+            />
+          </div>
+          <div
+            class="space-y-2"
+          >
+            <label
+              class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+            >
+              URL do Vídeo
+            </label>
+            <div
+              class="relative"
+            >
+              <i
+                class="fab fa-youtube absolute left-3 top-2.5 text-slate-400"
+              />
+              <input
+                class="w-full pl-9 pr-3 py-2 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg text-sm text-slate-700 dark:text-slate-200 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                placeholder="https://youtube.com/..."
+                type="text"
+                value="https://example.com/video.mp4"
+              />
+            </div>
+            <p
+              class="text-[10px] text-slate-400"
+            >
+              Cole a URL do vídeo ou o ID do YouTube.
+            </p>
+          </div>
+          <div
+            class="space-y-2"
+          >
+            <label
+              class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+            >
+              URL do Áudio (Principal)
+            </label>
+            <div
+              class="relative"
+            >
+              <i
+                class="fas fa-headphones absolute left-3 top-2.5 text-slate-400"
+              />
+              <input
+                class="w-full pl-9 pr-3 py-2 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg text-sm text-slate-700 dark:text-slate-200 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                placeholder="https://..."
+                type="text"
+                value=""
+              />
+            </div>
+            <p
+              class="text-[10px] text-slate-400"
+            >
+              Áudio principal da aula para leitura automática.
+            </p>
+          </div>
+          <div
+            class="space-y-2"
+          >
+            <label
+              class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+            >
+              Duração (Segundos)
+            </label>
+            <div
+              class="relative"
+            >
+              <i
+                class="fas fa-clock absolute left-3 top-2.5 text-slate-400"
+              />
+              <input
+                class="w-full pl-9 pr-3 py-2 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg text-sm text-slate-700 dark:text-slate-200 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                type="number"
+                value="600"
+              />
+            </div>
+            <p
+              class="text-[10px] text-slate-400"
+            >
+              10
+              m
+              0
+              s
+            </p>
+          </div>
+          <div
+            class="space-y-2"
+          >
+            <label
+              class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+            >
+              URL da Imagem (Capa)
+            </label>
+            <div
+              class="relative"
+            >
+              <i
+                class="fas fa-image absolute left-3 top-2.5 text-slate-400"
+              />
+              <input
+                class="w-full pl-9 pr-3 py-2 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg text-sm text-slate-700 dark:text-slate-200 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                placeholder="https://..."
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="space-y-2"
+          >
+            <label
+              class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+            >
+              Questionário
+            </label>
+            <button
+              class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-bold transition-colors shadow-lg shadow-cyan-600/20"
+            >
+              <i
+                class="fas fa-clipboard-list text-lg"
+              />
+              Gerenciar Quiz
+            </button>
+            <p
+              class="text-[10px] text-slate-400"
+            >
+              Adicione perguntas para validar o aprendizado.
+            </p>
+          </div>
+          <div
+            class="pt-6 border-t border-slate-200 dark:border-slate-800"
+          >
+            <div
+              class="p-3 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg border border-indigo-100 dark:border-indigo-800 mb-4"
+            >
+              <h4
+                class="text-xs font-bold text-indigo-800 dark:text-indigo-300 mb-1"
+              >
+                <i
+                  class="fas fa-info-circle mr-1"
+                />
+                Dica
+              </h4>
+              <p
+                class="text-[11px] text-indigo-700 dark:text-indigo-300/80 leading-relaxed"
+              >
+                Essas informações são salvas automaticamente junto com o conteúdo quando você clica em "Salvar".
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      [contenteditable]:empty:before { content: attr(data-placeholder); color: #94a3b8; opacity: 0.6; pointer-events: none; } .editor-content ul { list-style-type: disc; margin-left: 1.5em; } .editor-content ol { list-style-type: decimal; margin-left: 1.5em; } .editor-content blockquote { border-left: 4px solid #ccc; padding-left: 1em; margin-left: 0; color: #666; } /* Estilização para parecer página A4 Google Docs */ @media print { body * { visibility: hidden; } .editor-content, .editor-content * { visibility: visible; } .editor-content { position: absolute; left: 0; top: 0; width: 100%; margin: 0; padding: 0; box-shadow: none; border: none; } }
+    </style>
+  </div>
+</div>
+`;
