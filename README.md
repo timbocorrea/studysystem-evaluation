@@ -289,45 +289,40 @@ Para observar o recorte acadêmico, use uma sessão de aluno autorizada sem publ
 
 A aceitação consolidada da jornada está em [`docs/POC_ACCEPTANCE.md`](docs/POC_ACCEPTANCE.md). A demonstração foi registrada em desktop e em viewport mobile aproximado de 390 × 844.
 
-## Estado técnico da entrega
+## Validação da entrega
 
-```text
-UNIT_TEST_SUITES=32/32 PASS
-UNIT_TESTS=167/167 PASS
-MIGRATION_ALIGNMENT=42/42
-TYPECHECK=PASS
-BUILD=PASS
-SECURITY_SCAN=PASS
-PRE_VIDEO_REHEARSAL=PASS
-VIDEO_DURATION_SECONDS=57.38
-VIDEO_DURATION_UNDER_60=PASS
-LOGIN_SCREEN_REMOVED=PASS
-MAIN_STUDENT_FLOW_VISIBLE=PASS
-QUIZ_RESULT_VISIBLE=PASS
-RETURN_TO_COURSE_VISIBLE=PASS
-VIDEO_READY_FOR_SUBMISSION=SIM
-CHECKLIST_FINAL=IN_PROGRESS
-```
+A versão preparada para avaliação foi revisada antes da submissão. Os principais resultados foram:
+
+- todas as 32 suítes de testes automatizados foram aprovadas, totalizando 167 testes com resultado positivo;
+- o histórico de banco utilizado na validação estava alinhado em 42 de 42 migrations no baseline consolidado da entrega;
+- a verificação de tipos do TypeScript foi concluída sem erros;
+- a aplicação foi compilada com sucesso para produção;
+- a verificação automatizada de segurança foi aprovada;
+- foi realizado um ensaio completo do fluxo antes da gravação final;
+- o vídeo final possui aproximadamente 57,38 segundos, dentro do limite máximo de 1 minuto;
+- a gravação começa diretamente no Dashboard, sem utilizar tempo da demonstração com a tela de login;
+- o vídeo mostra o fluxo principal do estudante, incluindo curso, aula, questionário, resultado e retorno ao curso;
+- a demonstração está pronta para ser utilizada na submissão acadêmica.
+
+A conferência final dos itens de submissão é realizada antes do envio no Portal do Aluno.
 
 ## Sobre este repositório de avaliação
 
-Este repositório existe para disponibilizar código e documentação da 2ª entrega para avaliação acadêmica. Ele é um snapshot público sanitizado do StudySystem, e não a identidade do produto.
+Este repositório existe para disponibilizar o código e a documentação da 2ª entrega de forma pública para o avaliador, sem expor informações privadas do ambiente de desenvolvimento original.
 
-O snapshot:
+Para isso:
 
-- não contém credenciais privadas ou secrets;
-- não contém o histórico Git do repositório canônico;
-- usa placeholders em `.env.example`;
-- não deve receber credenciais, tokens privados ou dados de estudantes;
-- mantém separado o produto StudySystem, a PoC acadêmica e o pacote público de avaliação.
+- as credenciais, senhas e chaves privadas não são publicadas;
+- o repositório usado na avaliação contém uma cópia pública preparada e revisada do projeto, sem o histórico privado do repositório principal;
+- o arquivo `.env.example` utiliza somente valores de exemplo;
+- dados privados de estudantes e tokens de acesso não fazem parte deste repositório;
+- o repositório principal de desenvolvimento permanece privado, enquanto esta versão pública é destinada exclusivamente à avaliação acadêmica.
 
-```text
-GITHUB_EVALUATION_ACCESS=PASS
-PUBLIC_EVALUATION_REPOSITORY=https://github.com/timbocorrea/studysystem-evaluation
-EVALUATION_REPOSITORY=PUBLIC_SANITIZED_SNAPSHOT
-CANONICAL_REPOSITORY=PRIVATE
-PUBLIC_INITIAL_SNAPSHOT_SHA=5b8a5b4e5f70b6d3461eb6589faee602420977e4
-```
+O repositório público de avaliação está disponível em:
+
+[https://github.com/timbocorrea/studysystem-evaluation](https://github.com/timbocorrea/studysystem-evaluation)
+
+A primeira versão pública preparada para avaliação foi registrada no commit `5b8a5b4e5f70b6d3461eb6589faee602420977e4`, preservando a rastreabilidade do material disponibilizado.
 
 ## Vídeo da demonstração
 
