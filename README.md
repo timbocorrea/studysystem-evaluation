@@ -299,10 +299,14 @@ TYPECHECK=PASS
 BUILD=PASS
 SECURITY_SCAN=PASS
 PRE_VIDEO_REHEARSAL=PASS
-VIDEO_FLOW_DURATION_APPROX_SECONDS=54
-VIDEO_FLOW_FITS_60_SECONDS=SIM
-VIDEO=PENDING_PHASE_D
-CHECKLIST_FINAL=PENDING_PHASE_E
+VIDEO_DURATION_SECONDS=57.38
+VIDEO_DURATION_UNDER_60=PASS
+LOGIN_SCREEN_REMOVED=PASS
+MAIN_STUDENT_FLOW_VISIBLE=PASS
+QUIZ_RESULT_VISIBLE=PASS
+RETURN_TO_COURSE_VISIBLE=PASS
+VIDEO_READY_FOR_SUBMISSION=SIM
+CHECKLIST_FINAL=IN_PROGRESS
 ```
 
 ## Sobre este repositório de avaliação
@@ -327,4 +331,6 @@ PUBLIC_INITIAL_SNAPSHOT_SHA=5b8a5b4e5f70b6d3461eb6589faee602420977e4
 
 ## Vídeo da demonstração
 
-Não há URL de vídeo neste README. O vídeo permanece pendente para a Fase D, e o checklist final permanece pendente para a Fase E.
+A demonstração final da Prova de Conceito, com duração aproximada de 57,38 segundos, está disponível em:
+
+[Assistir ao vídeo da demonstração](https://youtube.com/shorts/1uuI9f3UY34)
