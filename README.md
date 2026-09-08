@@ -86,20 +86,36 @@ Tecnologias principais:
 - Vitest para testes automatizados e Playwright para testes de navegador;
 - Recharts, Lucide e outras bibliotecas de interface declaradas no projeto.
 
+## Experimentar o StudySystem
+
+A forma recomendada de conhecer a aplicação é usar a instância pública já publicada para a avaliação:
+
+[https://studysystem-psi.vercel.app](https://studysystem-psi.vercel.app)
+
+O código-fonte e os passos para reprodução estão neste repositório público:
+
+[https://github.com/timbocorrea/studysystem-evaluation](https://github.com/timbocorrea/studysystem-evaluation)
+
+A instância pública já está conectada a um backend provisionado. Use uma conta autorizada pelo ambiente e os cursos liberados para ela; este README não publica credenciais, senhas ou dados pessoais.
+
 ## Instalação e configuração
+
+Há uma diferença importante entre experimentar a instância pública, executar o frontend localmente e implantar uma nova instância completa. Os comandos abaixo reproduzem o frontend local conectado a um backend StudySystem compatível; eles não criam esse backend.
 
 ### Pré-requisitos
 
 - Git;
 - Node.js 20 ou versão compatível com o pipeline do projeto;
 - npm;
-- um projeto Supabase configurado para a aplicação;
+- acesso a um projeto Supabase já provisionado e compatível com a aplicação, para a execução local;
 - Chromium, caso os testes de navegador sejam executados localmente;
 - uma conta Dropbox somente se a integração de materiais for necessária.
 
-Docker e Supabase local não são necessários para a instalação web padrão conectada a um projeto Supabase em nuvem.
+Docker e Supabase local não são necessários para executar o frontend conectado a um projeto Supabase em nuvem já provisionado.
 
-### Instalação local
+### Clonar e executar o frontend localmente
+
+Antes de executar os comandos, confirme que você possui acesso a um backend Supabase compatível. O clone não provisiona schema, autenticação, permissões, dados iniciais ou funções do backend.
 
 ```bash
 git clone https://github.com/timbocorrea/studysystem-evaluation.git
@@ -120,20 +136,27 @@ No PowerShell, use `Copy-Item .env.example .env.local`.
 O `.env.example` contém somente placeholders para variáveis públicas:
 
 ```text
-VITE_SUPABASE_URL=https://SEU_PROJETO.supabase.co
-VITE_SUPABASE_ANON_KEY=SEU_ANON_KEY
-VITE_DROPBOX_APP_KEY=SEU_DROPBOX_APP_KEY
+VITE_SUPABASE_URL=https://<YOUR_PROJECT_ID>.supabase.co
+VITE_SUPABASE_ANON_KEY=<YOUR_SUPABASE_ANON_KEY>
+VITE_DROPBOX_APP_KEY=<YOUR_DROPBOX_APP_KEY>
 ```
 
 `VITE_DROPBOX_APP_KEY` é opcional. Os valores Supabase são necessários para a aplicação iniciar corretamente. Nunca coloque chaves administrativas, tokens privados, senhas ou secrets de Edge Functions em variáveis `VITE_*`.
 
-Credenciais institucionais de IA pertencem aos secrets protegidos das Edge Functions. A chave pessoal Google AI do estudante, quando usada, fica local ao navegador e é enviada à função autenticada somente no recurso correspondente; ela não deve ser versionada, registrada em logs ou compartilhada.
+As credenciais institucionais de IA, como `GEMINI_API_KEY` e `GROQ_API_KEY`, pertencem aos secrets protegidos das Edge Functions e não devem ser copiadas para `.env.local` do frontend. A chave pessoal Google AI do estudante, quando usada, fica local ao navegador e é enviada à função autenticada somente no recurso correspondente; ela não deve ser versionada, registrada em logs ou compartilhada.
 
-### Supabase
+### Backend compatível e nova implantação
 
-O frontend espera um schema compatível com a versão do código, incluindo tabelas, RLS, policies, RPCs, Storage e Edge Functions usados pela aplicação. O histórico em `supabase/migrations/` registra a evolução do ambiente e não deve ser aplicado cegamente como instalador de uma instância vazia.
+O frontend espera um backend compatível com a versão do código, incluindo:
 
-Para uma nova instalação, o operador deve provisionar o schema por procedimento controlado, conferir as políticas e configurar Auth, Storage, RPCs e secrets protegidos antes de liberar usuários. Não execute alterações destrutivas nem escritas remotas sem backup, revisão e autorização operacional.
+- schema PostgreSQL e migrations aplicadas por procedimento controlado;
+- Supabase Auth e redirects do ambiente;
+- RLS, policies e RPCs validados;
+- Storage e políticas de acesso;
+- Edge Functions `ask-ai` e `monitor-usage`, com seus secrets server-side;
+- perfis, permissões e conteúdo inicial necessários para os cursos.
+
+O histórico em `supabase/migrations/` registra a evolução do ambiente; ele não é um instalador comprovado de projeto Supabase vazio e não deve ser aplicado cegamente. Uma nova implantação completa exige provisionamento controlado, validação de segurança e configuração dos dados iniciais. Não execute alterações destrutivas nem escritas remotas sem backup, revisão e autorização operacional.
 
 ### Primeiro acesso
 
@@ -141,7 +164,7 @@ Para uma nova instalação, o operador deve provisionar o schema por procediment
 npm run dev
 ```
 
-Abra `http://localhost:3000`, crie uma conta ou entre com e-mail e senha e acesse os cursos liberados para a conta. O login com Google depende da configuração do provider no Supabase. Áreas administrativas aparecem somente para perfis autorizados.
+Abra `http://localhost:3000` e entre com uma conta que já tenha acesso aos cursos configurados no backend. O clone não cria conta, perfil, curso ou conteúdo inicial. Cadastro, login com Google e áreas administrativas dependem da configuração do Auth e das permissões do ambiente.
 
 ## Build, testes e publicação
 
@@ -158,7 +181,7 @@ npm run test:e2e
 
 Se o Chromium não estiver instalado, execute `npx playwright install chromium`.
 
-Para publicar uma instância própria, configure apenas as variáveis públicas do frontend no ambiente de build, sirva `dist/` com fallback de SPA e registre no Supabase Auth os domínios e redirects permitidos. Em um projeto Vercel, use `npm run build` e `dist` como diretório de saída; as Edge Functions e seus secrets continuam sendo configurados no Supabase.
+`npm run preview` apenas serve o build local; não provisiona o backend. Para publicar uma instância própria, além do build do frontend, é necessário concluir o provisionamento descrito acima, configurar apenas as variáveis públicas do frontend no ambiente de build, servir `dist/` com fallback de SPA e registrar no Supabase Auth os domínios e redirects permitidos. Em um projeto Vercel, use `npm run build` e `dist` como diretório de saída; as Edge Functions e seus secrets continuam sendo configurados no Supabase.
 
 ## Segurança e privacidade
 
