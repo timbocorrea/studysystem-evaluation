@@ -1,14 +1,16 @@
 # StudySystem
 
-## Plataforma de aprendizagem e acompanhamento educacional
+Plataforma de aprendizagem e acompanhamento educacional
 
 ## Sobre o StudySystem
 
 O StudySystem é uma plataforma web de aprendizagem, acompanhamento educacional e organização de estudos. A proposta é reunir, no mesmo ambiente, cursos, aulas, materiais, questionários, resultados e registros de progresso para acompanhar diferentes momentos do estudo — do acesso ao conteúdo à retomada posterior da jornada.
 
-O produto foi pensado para apoiar instituições de ensino regular, escolas e cursos profissionalizantes, treinamentos corporativos e contextos de estudo individual. A organização de cursos, progresso e histórico também pode servir a cenários de acompanhamento individual ou familiar, dependendo da configuração de acesso adotada. Isso não pressupõe um painel específico para responsáveis nem um modelo comercial ou institucional já definido.
+O produto não foi criado apenas para uma avaliação acadêmica. Ele organiza uma experiência de aprendizagem que pode ser configurada para diferentes contextos educacionais, respeitando os perfis e as permissões definidos no ambiente.
 
-## Para quem o sistema foi pensado
+## Para quem foi desenvolvido
+
+O StudySystem foi pensado para escolas de ensino regular, cursos profissionalizantes, treinamentos corporativos e contextos de estudo individual. A organização de cursos, progresso e histórico também pode servir a cenários de acompanhamento individual ou familiar, dependendo da configuração de acesso adotada. Isso não pressupõe um painel específico para responsáveis nem um modelo comercial ou institucional já definido.
 
 O acesso é organizado por autenticação, perfil e regras de autorização do backend:
 
@@ -18,7 +20,7 @@ O acesso é organizado por autenticação, perfil e regras de autorização do b
 
 A aplicação não oferece atalhos públicos para promoção de perfil. As permissões administrativas dependem do provisionamento adequado do ambiente.
 
-## Experiência de aprendizagem
+## Recursos de aprendizagem
 
 O código atual reúne recursos para organizar o estudo e acompanhar seu desenvolvimento:
 
@@ -39,46 +41,21 @@ Esses recursos não têm todos o mesmo grau de validação operacional. O fluxo 
 
 O projeto possui reprodução de áudio, mas este README não apresenta text-to-speech como uma funcionalidade pronta: não foi encontrada uma implementação de síntese de voz no código auditado.
 
-## Projeto Integrador — 2ª Entrega
+## Como funciona
 
-A segunda entrega acadêmica utiliza apenas um recorte funcional do StudySystem. O produto tem uma visão mais ampla, mas a avaliação foi delimitada para que uma jornada completa pudesse ser observada com clareza, incluindo interface, autenticação, regras de negócio, backend, persistência e recuperação.
+A experiência de aprendizagem acompanha o estudante ao longo do uso da plataforma. Em geral, ele:
 
-Esta segunda entrega não pretende demonstrar toda a superfície funcional do StudySystem. A Prova de Conceito (PoC) foi deliberadamente limitada a uma jornada principal para que o funcionamento de ponta a ponta pudesse ser acompanhado sem confundir o recorte acadêmico com o produto inteiro.
+1. acessa os cursos liberados para sua conta;
+2. navega por módulos e aulas;
+3. consome textos, vídeos, áudios, materiais e recursos externos;
+4. pode registrar anotações e destaques para retomar pontos importantes;
+5. realiza questionários práticos ou avaliativos;
+6. consulta resultados e acompanha o progresso;
+7. retorna posteriormente para continuar os estudos.
 
-**Integrante:** ALEXANDRE CORREA DOS SANTOS
+Instrutores e administradores autorizados gerenciam conteúdo, materiais, questionários, acessos e atividades conforme seu perfil. Recursos complementares, como IA, Dropbox, fórum e gamificação, dependem da configuração do ambiente e das permissões da conta.
 
-## PoC escolhida
-
-O recorte funcional da segunda entrega é:
-
-```text
-Aluno autenticado
-→ Dashboard
-→ Curso
-→ Aula
-→ Questionário
-→ Resultado
-→ Progresso salvo
-→ Retorno posterior
-```
-
-O fluxo foi escolhido porque mostra, em pouco tempo, como o estudante encontra um curso, acessa uma aula, responde uma avaliação, recebe o resultado e retoma depois o ponto de estudo registrado.
-
-## O que a PoC demonstra
-
-Na jornada validada, o aluno:
-
-1. entra com uma sessão autorizada;
-2. abre o Dashboard e seleciona um curso;
-3. percorre a estrutura do curso e acessa uma aula;
-4. consulta o conteúdo e abre o questionário relacionado;
-5. envia as respostas e visualiza o resultado;
-6. mantém a tentativa e o progresso persistidos;
-7. retorna posteriormente e recupera o estado salvo.
-
-O valor técnico do recorte está na integração entre a interface React, os serviços de domínio, os repositories, as RPCs e o Supabase/PostgreSQL. O escopo detalhado está em [`docs/segunda-entrega/POC.md`](docs/segunda-entrega/POC.md), e a rastreabilidade dos requisitos está em [`docs/segunda-entrega/REQUISITOS_E_ACEITACAO.md`](docs/segunda-entrega/REQUISITOS_E_ACEITACAO.md).
-
-## Arquitetura
+## Arquitetura e tecnologias
 
 O frontend foi desenvolvido em React com TypeScript. A aplicação separa componentes visuais, lógica de jornada e acesso a dados, mantendo as regras de persistência fora da interface. O projeto utiliza Repository Pattern: as consultas e operações do Supabase ficam concentradas em uma camada própria, em vez de serem espalhadas pelos componentes React.
 
@@ -98,46 +75,16 @@ PostgreSQL, RLS e Edge Functions
 
 As dependências são compostas em `services/Dependencies.ts` e o cliente Supabase é criado em `services/supabaseClient.ts`. Não há um backend Node monolítico separado: o backend da aplicação é formado por Supabase Auth, PostgreSQL, Storage, RPCs e Edge Functions em Deno.
 
-## Tecnologias
+Tecnologias principais:
 
 - React 19 e TypeScript;
 - Vite e React Router;
 - Tailwind CSS;
 - TanStack Query para dados remotos e cache;
 - React Context e Zustand para sessão e estado global complementar;
-- Supabase Auth, PostgreSQL, Row Level Security, Storage e Edge Functions em Deno;
+- Supabase Auth, PostgreSQL, Row Level Security, RPCs, Storage e Edge Functions em Deno;
 - Vitest para testes automatizados e Playwright para testes de navegador;
 - Recharts, Lucide e outras bibliotecas de interface declaradas no projeto.
-
-## Como avaliar a PoC
-
-Para observar o recorte acadêmico, use uma sessão de aluno autorizada sem publicar credenciais:
-
-1. abra o Dashboard;
-2. selecione um curso;
-3. abra uma aula;
-4. acesse e responda o questionário;
-5. envie as respostas e observe o resultado;
-6. confirme a persistência da tentativa e do progresso;
-7. retorne ao curso ou à aula e observe a recuperação do progresso.
-
-A aceitação consolidada da jornada está em [`docs/POC_ACCEPTANCE.md`](docs/POC_ACCEPTANCE.md). A demonstração foi registrada em desktop e em viewport mobile aproximado de 390 × 844.
-
-## Estado técnico da entrega
-
-```text
-UNIT_TEST_SUITES=32/32 PASS
-UNIT_TESTS=167/167 PASS
-MIGRATION_ALIGNMENT=42/42
-TYPECHECK=PASS
-BUILD=PASS
-SECURITY_SCAN=PASS
-PRE_VIDEO_REHEARSAL=PASS
-VIDEO_FLOW_DURATION_APPROX_SECONDS=54
-VIDEO_FLOW_FITS_60_SECONDS=SIM
-VIDEO=PENDING_PHASE_D
-CHECKLIST_FINAL=PENDING_PHASE_E
-```
 
 ## Instalação e configuração
 
@@ -213,30 +160,6 @@ Se o Chromium não estiver instalado, execute `npx playwright install chromium`.
 
 Para publicar uma instância própria, configure apenas as variáveis públicas do frontend no ambiente de build, sirva `dist/` com fallback de SPA e registre no Supabase Auth os domínios e redirects permitidos. Em um projeto Vercel, use `npm run build` e `dist` como diretório de saída; as Edge Functions e seus secrets continuam sendo configurados no Supabase.
 
-## Sobre este repositório de avaliação
-
-Este repositório existe para disponibilizar código e documentação da 2ª entrega para avaliação acadêmica. Ele é um snapshot público sanitizado do StudySystem, e não a identidade do produto.
-
-O snapshot:
-
-- não contém credenciais privadas ou secrets;
-- não contém o histórico Git do repositório canônico;
-- usa placeholders em `.env.example`;
-- não deve receber credenciais, tokens privados ou dados de estudantes;
-- mantém separado o produto StudySystem, a PoC acadêmica e o pacote público de avaliação.
-
-```text
-GITHUB_EVALUATION_ACCESS=PASS
-PUBLIC_EVALUATION_REPOSITORY=https://github.com/timbocorrea/studysystem-evaluation
-EVALUATION_REPOSITORY=PUBLIC_SANITIZED_SNAPSHOT
-CANONICAL_REPOSITORY=PRIVATE
-PUBLIC_INITIAL_SNAPSHOT_SHA=5b8a5b4e5f70b6d3461eb6589faee602420977e4
-```
-
-## Vídeo da PoC
-
-Não há URL de vídeo neste README. O vídeo permanece pendente para a Fase D, e o checklist final permanece pendente para a Fase E.
-
 ## Segurança e privacidade
 
 - mantenha `.env.local` fora do controle de versão;
@@ -261,23 +184,106 @@ archive/          Migrations históricas preservadas fora do conjunto ativo
 docs/             Documentação do produto e contratos técnicos
 ```
 
-## Documentação
-
-### 2ª entrega
-
-- [Prova de Conceito](docs/segunda-entrega/POC.md)
-- [Requisitos e critérios de aceitação](docs/segunda-entrega/REQUISITOS_E_ACEITACAO.md)
-- [Arquitetura e tecnologias](docs/segunda-entrega/ARQUITETURA_E_TECNOLOGIAS.md)
-- [Status da entrega](docs/segunda-entrega/STATUS_ENTREGA.md)
-
-### Contratos do produto e da implementação
+## Documentação do produto
 
 - [PRD do produto](docs/product/STUDYSYSTEM_PRD.md)
 - [Especificação funcional](docs/FSD.md)
 - [Contrato de UX/UI](docs/DESIGN.md)
 - [Contrato técnico de execução](docs/architecture/STUDYSYSTEM_EXECUTION_CONTRACT.md)
-- [Gate de aceitação da PoC](docs/POC_ACCEPTANCE.md)
 
-## Licença
+O repositório também contém documentação específica da 2ª entrega, apresentada na seção acadêmica abaixo.
 
 Este repositório não contém atualmente um arquivo `LICENSE`. Antes de redistribuir o StudySystem ou incorporá-lo a um produto, confirme com os responsáveis os termos legais aplicáveis.
+
+---
+
+## Projeto Integrador — 2ª Entrega
+
+Esta entrega acadêmica usa um recorte funcional do StudySystem para demonstrar uma jornada completa sem representar todo o sistema. **Integrante:** Alexandre Correa dos Santos.
+
+Os documentos específicos da entrega são a [Prova de Conceito](docs/segunda-entrega/POC.md), os [requisitos e critérios de aceitação](docs/segunda-entrega/REQUISITOS_E_ACEITACAO.md), a [arquitetura da entrega](docs/segunda-entrega/ARQUITETURA_E_TECNOLOGIAS.md) e o [status da entrega](docs/segunda-entrega/STATUS_ENTREGA.md).
+
+## Prova de Conceito (PoC) escolhida
+
+Para a 2ª entrega foi selecionada uma jornada específica do StudySystem como Prova de Conceito (PoC):
+
+```text
+Aluno autenticado
+→ Dashboard
+→ Curso
+→ Aula
+→ Questionário
+→ Resultado
+→ Progresso salvo
+→ Retorno posterior
+```
+
+O fluxo foi escolhido porque mostra, em pouco tempo, como o estudante encontra um curso, acessa uma aula, responde uma avaliação, recebe o resultado e retoma depois o ponto de estudo registrado.
+
+## O que a PoC demonstra
+
+Na jornada validada, o aluno:
+
+1. entra com uma sessão autorizada;
+2. abre o Dashboard e seleciona um curso;
+3. percorre a estrutura do curso e acessa uma aula;
+4. consulta o conteúdo e abre o questionário relacionado;
+5. envia as respostas e visualiza o resultado;
+6. mantém a tentativa e o progresso persistidos;
+7. retorna posteriormente e recupera o estado salvo.
+
+O recorte evidencia a integração entre interface, autenticação, regras de negócio, backend, persistência da tentativa, persistência do progresso e recuperação posterior. A PoC não pretende validar toda a superfície funcional do produto.
+
+## Como avaliar a PoC
+
+Para observar o recorte acadêmico, use uma sessão de aluno autorizada sem publicar credenciais:
+
+1. abra o Dashboard;
+2. selecione um curso;
+3. abra uma aula;
+4. acesse e responda o questionário;
+5. envie as respostas e observe o resultado;
+6. confirme a persistência da tentativa e do progresso;
+7. retorne ao curso ou à aula e observe a recuperação do progresso.
+
+A aceitação consolidada da jornada está em [`docs/POC_ACCEPTANCE.md`](docs/POC_ACCEPTANCE.md). A demonstração foi registrada em desktop e em viewport mobile aproximado de 390 × 844.
+
+## Estado técnico da entrega
+
+```text
+UNIT_TEST_SUITES=32/32 PASS
+UNIT_TESTS=167/167 PASS
+MIGRATION_ALIGNMENT=42/42
+TYPECHECK=PASS
+BUILD=PASS
+SECURITY_SCAN=PASS
+PRE_VIDEO_REHEARSAL=PASS
+VIDEO_FLOW_DURATION_APPROX_SECONDS=54
+VIDEO_FLOW_FITS_60_SECONDS=SIM
+VIDEO=PENDING_PHASE_D
+CHECKLIST_FINAL=PENDING_PHASE_E
+```
+
+## Sobre este repositório de avaliação
+
+Este repositório existe para disponibilizar código e documentação da 2ª entrega para avaliação acadêmica. Ele é um snapshot público sanitizado do StudySystem, e não a identidade do produto.
+
+O snapshot:
+
+- não contém credenciais privadas ou secrets;
+- não contém o histórico Git do repositório canônico;
+- usa placeholders em `.env.example`;
+- não deve receber credenciais, tokens privados ou dados de estudantes;
+- mantém separado o produto StudySystem, a PoC acadêmica e o pacote público de avaliação.
+
+```text
+GITHUB_EVALUATION_ACCESS=PASS
+PUBLIC_EVALUATION_REPOSITORY=https://github.com/timbocorrea/studysystem-evaluation
+EVALUATION_REPOSITORY=PUBLIC_SANITIZED_SNAPSHOT
+CANONICAL_REPOSITORY=PRIVATE
+PUBLIC_INITIAL_SNAPSHOT_SHA=5b8a5b4e5f70b6d3461eb6589faee602420977e4
+```
+
+## Vídeo da demonstração
+
+Não há URL de vídeo neste README. O vídeo permanece pendente para a Fase D, e o checklist final permanece pendente para a Fase E.
